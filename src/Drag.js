@@ -17,15 +17,16 @@ const CardContainer = styled(animated.div)`
   max-width: 320px;
   height: 300px;
   margin: 0 auto;
+  display: block;
   border-radius: 5px;
 `;
 
 export default class Drag extends Component {
   onUp = xDelta => () => {
     console.log(xDelta);
-    if (xDelta < -300) {
+    if (xDelta < -150) {
       alert('Remove Card!');
-    } else if (xDelta > 300) {
+    } else if (xDelta > 150) {
       alert('Accept Card!');
     }
   };
@@ -39,7 +40,7 @@ export default class Drag extends Component {
               <CardContainer
                 style={{
                   background: x.interpolate({
-                    range: [-300, 300],
+                    range: [-150, 150],
                     output: ['#ff1c68', '#14d790'],
                     extrapolate: 'clamp',
                   }),
@@ -51,7 +52,7 @@ export default class Drag extends Component {
                   elevation={4}
                   style={{
                     opacity: x.interpolate({
-                      range: [-300, -100],
+                      range: [-150, -100],
                       output: [0, 1],
                       extrapolate: 'clamp',
                     }),
@@ -59,8 +60,8 @@ export default class Drag extends Component {
                       [
                         x,
                         x.interpolate({
-                          range: [-300, 300],
-                          output: [-45, 45],
+                          range: [-150, 150],
+                          output: [-30, 30],
                           extrapolate: 'clamp',
                         }),
                       ],

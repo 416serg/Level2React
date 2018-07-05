@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Toggle } from 'Utilities';
 import { Modal } from 'Elements';
-import User from './User';
+import Drag from './Drag';
 import UserProvider from './UserProvider';
 import logo from './logo.svg';
 
@@ -16,7 +16,7 @@ class App extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">Welcome to React</h1>
           </header>
-          <User />
+          <Drag />
           <Toggle>
             {({ on, toggle }) => (
               <Fragment>

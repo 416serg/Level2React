@@ -7,7 +7,16 @@ export default class UserProvider extends Component {
     name: 'Serg',
     email: 'hey@416serg.me',
   };
+
+  logout = () => {
+    this.setState({
+      id: null,
+      name: '',
+      email: '',
+    });
+  };
+
   render() {
-    return <Provider value={{ user: this.state }}>{this.props.children}</Provider>;
+    return <Provider value={{ user: this.state, logout: this.logout }}>{this.props.children}</Provider>;
   }
 }
